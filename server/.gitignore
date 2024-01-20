@@ -1,0 +1,57 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+/lib-cov/
+/lib-cache/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Compiled binary addons (Node-gyp)
+/build/
+
+# Production build
+/build/
+
+# Yarn
+.yarn/
+
+# npm
+.npm/
+
+# dotenv environment variables file
+.env.local
+
+# Serverless directories
+.serverless/
+
+# Output of 'npm pack'
+*.tgz
+
+# NestJS generated folders
+dist/
