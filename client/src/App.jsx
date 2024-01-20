@@ -27,7 +27,7 @@ const App = () => {
 						path="/login"
 						element={
 							<PublicRoute>
-								<Login />{" "}
+								<Login />
 							</PublicRoute>
 						}
 					/>
