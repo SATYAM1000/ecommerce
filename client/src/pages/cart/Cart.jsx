@@ -1,6 +1,6 @@
 /** @format */
 
-import "./cart.css";
+import "./Cart.css";
 import { useAppContext } from "../../context/Context";
 import { CiCircleRemove } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
