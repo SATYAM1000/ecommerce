@@ -56,14 +56,7 @@ const App = () => {
 							</ProtectedRoute>
 						}
 					/>
-					<Route
-						path="/verification/:token"
-						element={
-							<PublicRoute>
-								<Verification />
-							</PublicRoute>
-						}
-					/>
+					<Route path="/verification/:token" element={<Verification />} />
 					<Route
 						path="/contact"
 						element={
