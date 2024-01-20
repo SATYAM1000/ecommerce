@@ -10,11 +10,12 @@ dotenv.config();
 const PORT = process.env.PORT;
 
 const app = express();
-app.use(cors({
-	origin:['https://deploy-mern.vercel.app'],
-	methods: ['GET', 'POST'],
-	credentials: true,
-}));
+// app.use(cors({
+// 	origin:['https://deploy-mern.vercel.app'],
+// 	methods: ['GET', 'POST'],
+// 	credentials: true,
+// }));
+app.use(cors());
 app.use(express.json());
 
 //routers--------
