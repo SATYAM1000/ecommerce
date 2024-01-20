@@ -21,8 +21,8 @@ export const registerUser = async (req, res) => {
 				.status(400)
 				.json({ msg: "User with this email already exists" });
 		}
-		if(existingUser && existingUser.verified === false){
-			await existingUser.deleteOne({email:email});
+		if (existingUser && existingUser.verified === false) {
+			await existingUser.deleteOne({ email: email });
 		}
 		const newUser = new UserModel({ username, email, password });
 		await newUser.save();
@@ -68,8 +68,7 @@ export const verifyUser = async (req, res) => {
 		}
 
 		try {
-			
-			const user=await UserModel.findOne({verificationToken:token})
+			const user = await UserModel.findOne({ verificationToken: token });
 
 			if (!user) {
 				return res.status(404).json({ msg: "User not found" });
@@ -104,7 +103,7 @@ export const loginUser = async (req, res) => {
 		if (!existingUser) {
 			return res.status(404).json({ msg: "User doesn't exist" });
 		}
-		if(existingUser.verified===false){
+		if (existingUser.verified === false) {
 			return res.status(400).json({ msg: "Please verify your email" });
 		}
 		const isPasswordCorrect = await bcrypt.compare(
@@ -124,6 +123,16 @@ export const loginUser = async (req, res) => {
 		res.status(200).json({ token, msg: "Login successful", userData });
 	} catch (error) {
 		console.log("Error while logging in", error);
+		throw new Error("Something went wrong");
+	}
+};
+
+export const getUserData = async () => {
+	try {
+		const user = await UserModel.findById(req.user._id).select("-password");
+		return res.status(200).json({ user });
+	} catch (error) {
+		console.log("Error while getting user data", error);
 		throw new Error("Something went wrong");
 	}
 };

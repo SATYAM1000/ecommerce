@@ -22,7 +22,7 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-				"http://localhost:5000/api/users/login",
+				"https://fakeapi-lete.onrender.com/api/users/login",
 				user
 			);
 			if (response.status === 200) {

@@ -11,15 +11,15 @@ const Card = ({ product }) => {
 	} = useAppContext();
 	let ratingCount = Math.round(product.rating.rate);
 	let allStars = new Array(5).fill(0);
-	console.log("new product: ");
+
 	const returnStar = () => {
-		console.log(ratingCount);
 		if (ratingCount > 0) {
 			ratingCount--;
-			return <LiaStarSolid className="star1" />;
+			return <LiaStarSolid className="star1" key
+			= {Math.random()} />;
 		} else {
 			ratingCount--;
-			return <LiaStarSolid className="star" />;
+			return <LiaStarSolid className="star" key={Math.random()} />;
 		}
 	};
 	return (
