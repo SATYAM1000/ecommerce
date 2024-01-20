@@ -11,7 +11,7 @@
     background: #ebe9e9;
     position: relative;
 }
-@media(max-width:768px){
+@media(max-width:1024px){
     .home-page{
         width: calc(100% - 2rem);
         font-family: 'Open Sans', sans-serif;

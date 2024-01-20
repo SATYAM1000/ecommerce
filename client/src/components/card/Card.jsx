@@ -2,8 +2,6 @@
 
 import "./card.css";
 import { LiaStarSolid } from "react-icons/lia";
-import { CiHeart } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa";
 import { useAppContext } from "../../context/Context";
 
 const Card = ({ product }) => {
@@ -11,7 +9,19 @@ const Card = ({ product }) => {
 		state: { cart },
 		dispatch,
 	} = useAppContext();
-	console.log("cart", cart);
+	let ratingCount = Math.round(product.rating.rate);
+	let allStars = new Array(5).fill(0);
+	console.log("new product: ");
+	const returnStar = () => {
+		console.log(ratingCount);
+		if (ratingCount > 0) {
+			ratingCount--;
+			return <LiaStarSolid className="star1" />;
+		} else {
+			ratingCount--;
+			return <LiaStarSolid className="star" />;
+		}
+	};
 	return (
 		<div className="product-card">
 			<div className="img-container">
@@ -20,13 +30,7 @@ const Card = ({ product }) => {
 			<div className="details-container">
 				<div className="details">
 					<p className="p-title">{product.title}</p>
-					<div className="ratings">
-						<LiaStarSolid className="star1" />
-						<LiaStarSolid className="star2" />
-						<LiaStarSolid className="star3" />
-						<LiaStarSolid className="star4" />
-						<LiaStarSolid className="star5" />
-					</div>
+					<div className="ratings">{allStars.map((star) => returnStar())}</div>
 					<div className="price">
 						<p>${product.price}</p>
 					</div>
@@ -34,11 +38,12 @@ const Card = ({ product }) => {
 				<div className="cart-btn">
 					{cart.some((p) => p.id === product.id) ? (
 						<button
-						onClick={() =>
-							dispatch({ type: "REMOVE_FROM_CART", payload: product })
-						} className="remove-btn">
-						REMOVE FROM CART
-					</button>
+							onClick={() =>
+								dispatch({ type: "REMOVE_FROM_CART", payload: product })
+							}
+							className="remove-btn">
+							REMOVE FROM CART
+						</button>
 					) : (
 						<button
 							onClick={() =>

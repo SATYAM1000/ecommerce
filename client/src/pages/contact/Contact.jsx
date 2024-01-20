@@ -5,7 +5,7 @@ import "./contact.css";
 const Contact = () => {
 	return (
 		<div className="contact-page">
-			<h2>This page is under development</h2>
+			<h2>Contact us page under development</h2>
 		</div>
 	);
 };

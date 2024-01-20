@@ -18,7 +18,7 @@
 	cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	.navbar {
 		padding: 0rem 1.1rem;
 	}
@@ -153,6 +153,7 @@
 	background:transparent;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	display: none;
 }
 .drop-down:hover{
 	transform: rotate(180deg);
@@ -161,7 +162,7 @@
 	display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	.for-mobile {
 		display: flex;
 		align-items: center;

@@ -213,6 +213,13 @@
     .circle{
         display: none;
     }
+	.th-table-price{
+		display: none;
+	}
+
+	.pprice{
+		display: none;
+	}
 }
 
 .total-chekout{

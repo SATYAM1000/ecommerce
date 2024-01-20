@@ -1,7 +1,7 @@
-
+import './error.css'
 const Error = () => {
   return (
-    <div>Error 404 - Page Not Found</div>
+    <div className='error-page' style={{fontWeight:600}}>Error 404 - Page Not Found</div>
   )
 }
 

@@ -23,7 +23,7 @@ const Cart = () => {
 						<tr className="tr-table">
 							<th className="th-table-img">Product</th>
 							<th className="th-table-remve">Remove</th>
-							<th>Price</th>
+							<th className="th-table-price">Price</th>
 							<th>Quantity</th>
 							<th>Total</th>
 						</tr>
@@ -52,7 +52,7 @@ const Cart = () => {
 											className="remove"
 										/>
 									</td>
-									<td>
+									<td className="pprice">
 										<p>${item.price}</p>
 									</td>
 									<td className="ii">
