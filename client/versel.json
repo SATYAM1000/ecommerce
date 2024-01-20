@@ -1,16 +1,8 @@
 {
-    "routes":[
+    "rewrites": [
         {
-            "src":"/",
-            "dest":"/"
-        },
-        {
-            "src":"/about",
-            "dest":"/"
-        },
-        {
-            "src":"/contact",
-            "dest":"/"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }
