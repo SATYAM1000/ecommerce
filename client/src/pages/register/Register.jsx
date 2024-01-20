@@ -27,6 +27,7 @@ const Register = () => {
 	};
 
 	const handleFormSubmit = async (event) => {
+		console.log("working")
 		event.preventDefault();
 		try {
 			setLoading(true);
